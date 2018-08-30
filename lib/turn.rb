@@ -14,7 +14,14 @@ end
 
 def turn(board)
   puts "Please enter 1-9: "
+  index = input_to_index(input)
   
+  if valid_move?(board, index) == true
+	  move(board, index, value="X") &&
+	  display_board(board)
+  else
+  turn(board)
+    end
 end
 
 def position_taken? (board, index)
